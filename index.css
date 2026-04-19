@@ -110,3 +110,17 @@ ul {
   color: #555;
   margin: 0;
 }
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  line-height: 2.2;
+}
+
+.contact-list a {
+  color: #2563eb;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
