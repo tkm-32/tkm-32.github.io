@@ -77,6 +77,13 @@ ul {
   line-height: 2;
 }
 
+.education-list li {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
 .skill-group {
   margin-bottom: 20px;
 }
@@ -89,6 +96,19 @@ ul {
   letter-spacing: 0.08em;
   margin-bottom: 8px;
 }
+
+.project-list {
+  line-height: 2;
+}
+
+.project-list > li {
+  margin-bottom: 16px;
+}
+
+.project-list a {
+  color: #2563eb;
+}
+
 
 .publication {
   margin-bottom: 24px;
