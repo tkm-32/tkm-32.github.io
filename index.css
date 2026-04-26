@@ -1,0 +1,146 @@
+﻿body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 40px;
+}
+
+nav {
+  background-color: #333;
+  padding: 0 20px;
+}
+
+.nav-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+}
+
+.nav-name {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 24px;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 22px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 8px;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 2;
+}
+
+.education-list li {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.project-list {
+  line-height: 2;
+}
+
+.project-list > li {
+  margin-bottom: 16px;
+}
+
+.project-list a {
+  color: #2563eb;
+}
+
+
+.publication {
+  margin-bottom: 24px;
+}
+
+.pub-year {
+  font-size: 14px;
+  color: #888;
+}
+
+.pub-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.pub-detail {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  line-height: 2.2;
+}
+
+.contact-list a {
+  color: #2563eb;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
