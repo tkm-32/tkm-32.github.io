@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,10 @@
 
     <nav>
         <div class="nav-inner">
-            <span class="nav-name">Takumi'Portfolio</span>
+            <span class="nav-name">Takumi's Portfolio</span>
             <ul>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#publications">Publications</a></li>
@@ -25,6 +25,7 @@
 
         <section id="about">
             <h1>川原 拓実</h1>
+            <p class="about-role">NLP / RECOMMENDER SYSTEMS</p>
             <p>自然言語処理を用いた推薦システムの構築に関する研究をしています</p>
             <p>自然言語処理、データ分析やWebアプリ開発に興味があります</p>
         </section>
@@ -33,6 +34,10 @@
             <h2>学歴</h2>
 
             <ul class="education-list">
+                <li>
+                    <span class="edu-year">2022年3月</span>
+                    <span class="edu-detail">香川県立香川中央高等学校 卒業</span>
+                </li>
                 <li>
                     <span class="edu-year">2022年4月</span>
                     <span class="edu-detail">香川大学 創造工学部 入学</span>
@@ -47,85 +52,92 @@
                 </li>
             </ul>
         </section>
-    
+
         <section id="skills">
             <h2>スキル</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Intermediate</h3>
-                    <div class="skill-chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">PyTorch</span>
-                        <span class="chip">scikit-learn</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Beginner</h3>
-                    <div class="skill-chips">
-                        <span class="chip">HTML / CSS</span>
-                        <span class="chip">Git</span>
-                        <span class="chip">C</span>
-                        <span class="chip">Java</span>
-                        <span class="chip">PHP</span>
-                    </div>
-                </div>
+            <div class="skill-group primary">
+                <h3>Intermediate</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>PyTorch</li>
+                    <li>scikit-learn</li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <h3>Beginner</h3>
+                <ul>
+                    <li>HTML / CSS</li>
+                    <li>Git</li>
+                    <li>C</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                </ul>
             </div>
         </section>
-    
+
         <section id="projects">
             <h2>制作物</h2>
 
             <ul class="project-list">
                 <li>
-                    <a href="https://github.com/tkm-32/News-Digestly" target="_blank">News-Digestly</a>
+                    <a href="https://github.com/tkm-32/News-Digestly" target="_blank" rel="noopener">News-Digestly</a>
                     <ul>
-                        <li>ニュースを読みやすく表示するシステム(python)</li>
+                        <li>ニュースを読みやすく表示するシステム(Python)</li>
                         <li>一週間で話題になったニュースを振り返る形式</li>
                     </ul>
                 </li>
                 <li>
-                    <a href="https://github.com/tkm-32/Review-Expert" target="_blank">Review-Expert</a>
+                    <a href="https://github.com/tkm-32/Review-Expert" target="_blank" rel="noopener">Review-Expert</a>
                     <ul>
-                        <li>感情分析を利用したシステム(python)</li>
+                        <li>感情分析を利用したシステム(Python)</li>
                         <li>口コミに対して良い評価と悪い評価のみを表示する</li>
                     </ul>
                 </li>
             </ul>
         </section>
-    
+
         <section id="publications">
             <h2>論文・発表歴</h2>
-    
-            <div class="pucation">
+
+            <div class="publication">
                 <span class="pub-year">2026.9</span>
-                <span class="pub-title">新聞記事の読み比べに向けた事実・意見・引用意見文を分類するモデルの構築</span>
-                <p class="pub-detail">川原 拓実，安藤 一秋，FIT2026 第25回情報科学技術フォーラム</p>
+                <div>
+                    <span class="pub-title">新聞記事の読み比べに向けた事実・意見・引用意見文を分類するモデルの構築</span>
+                    <p class="pub-detail">川原 拓実，安藤 一秋，FIT2026 第25回情報科学技術フォーラム</p>
+                </div>
             </div>
-            <div class="pucation">
+            <div class="publication">
                 <span class="pub-year">2026.6</span>
-                <span class="pub-title">NIE支援のための新聞社説における文脈を考慮した事実・意見判別手法の検討</span>
-                <p class="pub-detail">川原 拓実，安藤 一秋，人工知能学会 第40回全国大会</p>
+                <div>
+                    <span class="pub-title">NIE支援のための新聞社説における文脈を考慮した事実・意見判別手法の検討</span>
+                    <p class="pub-detail">川原 拓実，安藤 一秋，人工知能学会 第40回全国大会</p>
+                </div>
             </div>
-            <div class="pucation">
+            <div class="publication">
                 <span class="pub-year">2026.3</span>
-                <span class="pub-title">NIE支援に向けた新聞社説における事実・意見判別手法の検討</span>
-                <p class="pub-detail">川原 拓実，安藤 一秋，言語処理学会 第32回年次大会</p>
+                <div>
+                    <span class="pub-title">NIE支援に向けた新聞社説における事実・意見判別手法の検討</span>
+                    <p class="pub-detail">川原 拓実，安藤 一秋，言語処理学会 第32回年次大会</p>
+                </div>
             </div>
-            <div class="pucation">
+            <div class="publication">
                 <span class="pub-year">2025.9</span>
-                <span class="pub-title">小学校での「新聞読み比べ」支援に向けた社説のトピック分析</span>
-                <p class="pub-detail">川原 拓実，安藤 一秋，令和7年度電気関係学会四国支部連合大会講演論文集，191-191</p>
+                <div>
+                    <span class="pub-title">小学校での「新聞読み比べ」支援に向けた社説のトピック分析</span>
+                    <p class="pub-detail">川原 拓実，安藤 一秋，令和7年度電気関係学会四国支部連合大会講演論文集，191-191</p>
+                </div>
             </div>
-    
+
         </section>
 
         <section id="contact">
             <h2>Contacts</h2>
             <ul class="contact-list">
-                <li>Mail: takumik776@gmail.com</li>
-                <li>Github: <a href="https://github.com/tkm-32" target="_blank">https://github.com/tkm-32</a></li>
+                <li>Mail: tkm.job.16@gmail.com</li>
+                <li>GitHub: <a href="https://github.com/tkm-32" target="_blank" rel="noopener">https://github.com/tkm-32</a></li>
             </ul>
         </section>
     </div>
 
 </body>
+</html>

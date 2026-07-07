@@ -1,13 +1,38 @@
-﻿body {
-  font-family: sans-serif;
-  background: linear-gradient(135deg, #dee8ff, #dfe1e5);
-  color: #333;
-  margin: 0;
-  padding: 0;
+﻿/* ========== Design tokens ========== */
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #eff6ff;
+  --border: #e7e5e4;
+  --nav-bg: rgba(23, 23, 23, 0.92);
+  --radius: 12px;
 }
 
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", Meiryo, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Nav ========== */
 nav {
-  background-color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(8px);
   padding: 0 20px;
 }
 
@@ -17,13 +42,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 52px;
+  height: 56px;
 }
 
 .nav-name {
   color: #fff;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
 }
 
 nav ul {
@@ -31,127 +57,246 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 24px;
+  gap: 20px;
 }
 
 nav ul li a {
-  color: #ccc;
+  color: #a3a3a3;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13.5px;
+  transition: color 0.2s;
 }
 
 nav ul li a:hover {
   color: #fff;
 }
 
+/* アンカー移動時に固定ナビと重ならないように */
+section {
+  margin-bottom: 64px;
+  scroll-margin-top: 76px;
+}
+
 .container {
   max-width: 680px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 56px 20px 80px;
 }
 
-section {
-  margin-bottom: 48px;
+/* ========== Hero (About) ========== */
+#about h1 {
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  margin: 0 0 4px;
 }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+.about-role {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin: 0 0 16px;
 }
 
+#about p {
+  color: var(--muted);
+}
+
+/* ========== Headings ========== */
 h2 {
-  font-size: 22px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+h2::before {
+  content: "";
+  width: 6px;
+  height: 22px;
+  border-radius: 3px;
+  background: var(--accent);
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15.5px;
+  line-height: 1.8;
   margin: 0 0 8px;
 }
 
-ul {
-  padding-left: 20px;
-  line-height: 2;
+/* ========== Education (timeline) ========== */
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .education-list li {
+  position: relative;
   display: flex;
   gap: 24px;
-  padding: 10px 0;
+  padding: 0 0 24px 28px;
   font-size: 15px;
 }
 
-.skill-chips {
+/* 縦線 */
+.education-list li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: -6px;
+  width: 2px;
+  background: var(--border);
+}
+
+.education-list li:last-child::before { bottom: auto; height: 12px; }
+
+/* ドット */
+.education-list li::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2.5px solid var(--bg);
+}
+
+.edu-year {
+  flex: 0 0 90px;
+  color: var(--muted);
+  font-size: 13.5px;
+  padding-top: 1px;
+}
+
+/* ========== Skills (chips) ========== */
+.skill-group { margin-bottom: 24px; }
+
+.skill-group h3 {
+  font-size: 12.5px;
+  font-weight: bold;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 10px;
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.chip {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 4px 12px;
-  font-size: 13px;
+.skill-group ul li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 13.5px;
+}
+
+.skill-group.primary ul li {
+  background: var(--accent-soft);
+  border-color: #bfdbfe;
+  color: #1d4ed8;
   font-weight: 500;
 }
 
-.skill-card h3 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
+/* ========== Projects (cards) ========== */
 .project-list {
-  line-height: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
 }
 
 .project-list > li {
-  margin-bottom: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-list > li:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
 }
 
 .project-list a {
-  color: #2563eb;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
 }
 
+.project-list a:hover { text-decoration: underline; }
 
+.project-list ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ========== Publications ========== */
 .publication {
-  margin-bottom: 24px;
+  display: flex;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
 }
+
+.publication:last-of-type { border-bottom: none; }
 
 .pub-year {
-  font-size: 14px;
-  color: #888;
+  flex: 0 0 64px;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--accent);
+  padding-top: 3px;
 }
 
 .pub-title {
-  font-size: 16px;
+  display: block;
+  font-size: 15.5px;
   font-weight: bold;
-  margin: 4px 0;
+  margin: 0 0 4px;
+  line-height: 1.6;
 }
 
 .pub-detail {
-  font-size: 14px;
-  color: #555;
+  font-size: 13.5px;
+  color: var(--muted);
   margin: 0;
 }
 
+/* ========== Contact ========== */
 .contact-list {
   list-style: none;
   padding: 0;
-  line-height: 2.2;
+  line-height: 2.4;
+  font-size: 15px;
 }
 
-.contact-list a {
-  color: #2563eb;
-}
+.contact-list a { color: var(--accent); text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
 
-.contact-list a:hover {
-  text-decoration: underline;
+/* ========== Mobile ========== */
+@media (max-width: 560px) {
+  .nav-inner { height: auto; flex-direction: column; gap: 4px; padding: 10px 0; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+  #about h1 { font-size: 28px; }
+  .education-list li { flex-direction: column; gap: 2px; }
+  .publication { flex-direction: column; gap: 4px; }
 }
