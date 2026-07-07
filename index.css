@@ -1,9 +1,9 @@
 ﻿body {
   font-family: sans-serif;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #f5f7fa, #e8ecf0);
   color: #333;
   margin: 0;
-  padding: 40px;
+  padding: 0;
 }
 
 nav {
@@ -84,11 +84,22 @@ ul {
   font-size: 15px;
 }
 
-.skill-group {
-  margin-bottom: 20px;
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.skill-group h3 {
+.chip {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.skill-card h3 {
   font-size: 14px;
   font-weight: bold;
   color: #888;
